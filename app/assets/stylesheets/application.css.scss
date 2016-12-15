@@ -20,3 +20,16 @@
  h1, h2, h3 {
      font-family: 'Space Mono', monospace;
  }
+ 
+body, .navbar {
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a90329+19,890265+36,890265+36,890265+63,7f0202+99 */
+ background: #a90329; /* Old browsers */
+ background: -moz-linear-gradient(left,  #a90329 19%, #890265 36%, #890265 36%, #890265 63%, #7f0202 99%); /* FF3.6-15 */
+ background: -webkit-linear-gradient(left,  #a90329 19%,#890265 36%,#890265 36%,#890265 63%,#7f0202 99%); /* Chrome10-25,Safari5.1-6 */
+ background: linear-gradient(to right,  #a90329 19%,#890265 36%,#890265 36%,#890265 63%,#7f0202 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#7f0202',GradientType=1 ); /* IE6-9 */
+}
+
+.navbar {
+ border: none;
+}

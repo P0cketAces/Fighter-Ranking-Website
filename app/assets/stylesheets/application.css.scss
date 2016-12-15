@@ -47,6 +47,11 @@
  border: none;
 }
 
+.navbar-brand {
+ font-family: 'Space Mono', monospace;
+ font-weight: 800;
+}
+
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav li a{
  color: #7fff00;

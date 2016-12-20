@@ -1,19 +1,23 @@
 <div class="container-fluid text-center">
     <h1>About</h1>
-    <br>
-    <p>This is Fighterank, where I utilize a mathematical algorithm to determine</p>
-    <p>exactly who the best mma fighters in the world really are. I do so based on a</p>
-    <p>recursive search that factors in all of the fighters who the given fighter has</p>
-    <p>fought, and add or subtract a value based on the win/loss ratios of those fighters.</p>
-    <br>
-    <p><strong>Here is an example: </strong></p>
-    <p>Given: Fighter A has defeated Fighter B and Fighter C and lost to fighter D</p>
-    <p>Algorithm: </p>
-    <p>1. Check out the wins and losses of fighters B, C, and D</p>
-    <p>2. Come up with that fighter's specific win ratio</p>
-    <p>(example) B has 4 wins 3 losses, his/her win ratio is 4/7</p>
-    <p>3. Now put the information in this equation relative to fighter A:</p>
-    <p>A = (((B's win ratio) + (C's win ratio)) - (1 - D's win ratio)) / (Total fights of A)</p>
-    <br>
-    <p>After this, I normalize the values and map them from 0 to 100</p>
+    <div class = "row">
+        <div class = "col-md-4 col-md-offset-4 well text-left">
+            <br>
+            <p>This is Fighterank, where I utilize a mathematical algorithm to determine</p>
+            <p>exactly who the best mma fighters in the world really are. I do so based on a</p>
+            <p>recursive search that factors in all of the fighters who the given fighter has</p>
+            <p>fought, and add or subtract a value based on the win/loss ratios of those fighters.</p>
+            <br>
+            <p><strong>Here is an example: </strong></p>
+            <p>Given: Fighter A has defeated Fighter B and Fighter C and lost to fighter D</p>
+            <p>Algorithm: </p>
+            <p>1. Check out the wins and losses of fighters B, C, and D</p>
+            <p>2. Come up with that fighter's specific win ratio</p>
+            <p>(example) B has 4 wins 3 losses, his/her win ratio is 4/7</p>
+            <p>3. Now put the information in this equation relative to fighter A:</p>
+            <p>A = (((B's win ratio) + (C's win ratio)) - (1 - D's win ratio)) / (Total fights of A)</p>
+            <br>
+            <p>After this, I normalize the values and map them from 0 to 100</p>
+        </div>
+    </div>
 </div>

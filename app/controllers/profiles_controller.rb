@@ -1,5 +1,8 @@
 class ProfilesController < ApplicationController
     
+    before_action :authenticate_user! #, only: [:new, :edit] <-- just showing it's possible
+    before_action :only_current_user
+    
     # Get to /users/:user_id/profile/new
     def new
        # Render blank profile details form
@@ -44,6 +47,11 @@ class ProfilesController < ApplicationController
     
     private
         def profile_params
-           params.require(:profile).permit(:first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description) 
+            params.require(:profile).permit(:first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description) 
+        end
+        
+        def only_current_user
+            @user = User.find( params[:user_id] )
+            redirect_to(root_url) unless @user == current_user
         end
 end

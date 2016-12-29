@@ -3,8 +3,12 @@
         <div class="col-md-8 col-md-offset-2">
             <h1 class="text-center">Fighters:</h1>
             <h4 class="text-center">
-                <%= link_to new_fighter_path do %>
-                    Add new fighter
+                <% if user_signed_in? %>
+                    <% if current_user.email == 'jnelson0112@gmail.com' %>
+                        <%= link_to new_fighter_path do %>
+                            Add new fighter
+                        <% end %>
+                    <% end %>
                 <% end %>
             </h4>
             <ul class="list-unstyled">
@@ -22,12 +26,20 @@
                                     <%= fighter.losses %>
                                 </p>
                                 <p>
-                                    <%= link_to edit_fighter_path(id: fighter.id) do %>
-                                        <h4>EDIT</h4>
+                                    <% if user_signed_in? %>
+                                        <% if current_user.email == 'jnelson0112@gmail.com' %>
+                                            <%= link_to edit_fighter_path(id: fighter.id) do %>
+                                                <h4>EDIT</h4>
+                                            <% end %>
+                                        <% end %>
                                     <% end %>
                                 </p>
                                 <h4>
-                                    <%= link_to "DELETE", fighter, method: :delete, data: { confirm: "You sure?" } %>
+                                    <% if user_signed_in? %>
+                                        <% if current_user.email == 'jnelson0112@gmail.com' %>
+                                            <%= link_to "DELETE", fighter, method: :delete, data: { confirm: "You sure?" } %>
+                                        <% end %>
+                                    <% end %>
                                 </h4>
                             </div>
                         </div>

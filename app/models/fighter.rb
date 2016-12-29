@@ -83,7 +83,11 @@ class Fighter < ActiveRecord::Base
         winArr = f.wins.split(",")
         lossArr = f.losses.split(",")
         
-        winArr.length / (winArr.length + lossArr.length)
+        if(winArr.length + lossArr.length == 0)
+            1/2
+        else
+            winArr.length / (winArr.length + lossArr.length)
+        end
     end
     
 end

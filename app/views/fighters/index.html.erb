@@ -17,30 +17,24 @@
                         <div class="well row">
                             <div>
                                 <%= link_to fighter do %>
-                                    <h2><%= fighter.name %></h2>
+                                    <h2 class="fighter-name"><%= fighter.name %></h2>
                                 <% end %>
-                                <p> WINS: 
+                                <p class="wins"> WINS: 
                                     <%= fighter.wins %>
                                 </p>
-                                <p> LOSSES: 
+                                <p class="losses"> LOSSES: 
                                     <%= fighter.losses %>
                                 </p>
                                 <p>
                                     <% if user_signed_in? %>
                                         <% if current_user.email == 'jnelson0112@gmail.com' %>
                                             <%= link_to edit_fighter_path(id: fighter.id) do %>
-                                                <h4>EDIT</h4>
-                                            <% end %>
+                                                Edit
+                                            <% end %> | 
+                                            <%= link_to "Delete", fighter, method: :delete, data: { confirm: "You sure?" } %>
                                         <% end %>
                                     <% end %>
                                 </p>
-                                <h4>
-                                    <% if user_signed_in? %>
-                                        <% if current_user.email == 'jnelson0112@gmail.com' %>
-                                            <%= link_to "DELETE", fighter, method: :delete, data: { confirm: "You sure?" } %>
-                                        <% end %>
-                                    <% end %>
-                                </h4>
                             </div>
                         </div>
                     </li>

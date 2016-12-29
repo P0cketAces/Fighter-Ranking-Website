@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1 class="text-center">Edit Fighter</h1>
+            <div class="well">
+                <% if user_signed_in? %>
+                    <% if current_user.email == 'jnelson0112@gmail.com' %>
+                        <%= form_for @fighter do |f| %>
+                            <div class="form-group">
+                                <%= f.label :name %>
+                                <%= f.text_field :name, class: "form-control" %>
+                            </div>
+                            
+                            <div class="form-group">
+                                <%= f.label :wins %>
+                                <%= f.text_area :wins, class: "form-control" %>
+                            </div>
+                            
+                            <div class="form-group">
+                                <%= f.label :losses %>
+                                <%= f.text_area :losses, class: "form-control" %>
+                            </div>
+                            
+                            <div class="form-group">
+                                <%= f.submit 'Submit', class: "btn btn-default" %>
+                            </div>
+                        <% end %>
+                    <% else %>
+                        <h2 class="text-center">Not the correct user</h2>
+                    <% end %>
+                <% else %>
+                    <h2 class="text-center">Not signed in as the correct user</h2>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

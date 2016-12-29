@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 class="text-center">Rankings:</h1>
+            <ul class="list-unstyled">
+                <% @fighters.each do |fighter| %>
+                    <li>
+                        <div class="well row">
+                            <div>
+                                 <h2><%= fighter.name %> - <%= fighter.getRating %></h2>
+                            </div>
+                        </div>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

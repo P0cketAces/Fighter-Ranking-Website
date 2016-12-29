@@ -6,4 +6,8 @@ class PagesController < ApplicationController
     
     def about
     end
+    
+    def ranking
+        @fighters = Fighter.all
+    end
 end

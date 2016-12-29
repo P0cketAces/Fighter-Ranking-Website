@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1><%= @fighter.name %></h1>
+            <h3><%= @fighter.wins %></h3>
+            <h3><%= @fighter.losses %></h3>
+            <p>
+                <%= link_to fighters_path do %>
+                    <h2>Back to fighters</h2>
+                <% end %>
+            </p>
+        </div>
+    </div>
+</div>

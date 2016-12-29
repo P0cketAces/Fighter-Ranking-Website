@@ -10,7 +10,9 @@ class Fighter < ActiveRecord::Base
         winCount = 0
         winArr.each do |w|
             if(fighterWin = Fighter.find_by name: w)
-                winCount += baseCase(fighterWin)
+                baseFighterValue = baseCase(fighterWin)
+                scaledValue = scale(baseFighterValue)
+                winCount += scaledValue
             else
                numberWins -= 1 
             end
@@ -25,7 +27,9 @@ class Fighter < ActiveRecord::Base
         lossCount = 0
         lossArr.each do |l|
             if(fighterLoss = Fighter.find_by name: l)
-                lossCount += baseCase(fighterLoss)
+                baseFighterValue = baseCase(fighterLoss)
+                scaledValue = scale(baseFighterValue)
+                lossCount += scaledValue
             else
                 numberLosses -= 1
             end
@@ -84,10 +88,14 @@ class Fighter < ActiveRecord::Base
         lossArr = f.losses.split(",")
         
         if(winArr.length + lossArr.length == 0)
-            1/2
+            return 1/2
         else
-            winArr.length / (winArr.length + lossArr.length)
+            return winArr.length / (winArr.length + lossArr.length)
         end
     end
     
+    def scale(value)
+        newValue = (value + 1) / 2
+        newValue
+    end
 end
